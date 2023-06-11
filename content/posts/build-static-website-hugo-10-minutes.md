@@ -32,7 +32,7 @@ I recommend using `your-username.github.io` because it allows you to use that as
 3. Install your theme
 ```
 # Jump into directory
-cd personal-website
+cd your-username.github.io
 
 # Add theme as a submodule
 git init
