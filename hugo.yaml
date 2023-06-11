@@ -1,10 +1,9 @@
 languageCode: en-us
 baseURL: 'namtonthat.vercel.app'
-title: Nam's Thoughts
-theme: PaperMod
+title: 📕 Nam's Thoughts
+theme: paper
 
 params:
-  env: production
   github: namtonthat
   linkedin: ntonthat
   avatar: dzjuffqmr2@privaterelay.appleid.com
