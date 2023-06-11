@@ -8,8 +8,8 @@ tags: ["hugo", "static website", "github", "CI/CD pipeline", "Hugo tutorial", "H
 Discover how to showcase your work using Hugo, a powerful tool that integrates `markdown` files with a CI/CD pipeline, minimizing the time needed to build a professional-looking website.
 
 # 🎯 Project Objectives
-1. Learn how to build a Hugo website in under ten minutes.
-2. Understand the process of setting up a CI/CD pipeline in just another ten minutes.
+1. Learn how to build a Hugo website in under eight steps.
+2. Understand the process of setting up a CI/CD pipeline in just another two minutes.
 
 # Necessary Tools
 - `homebrew`; installation instructions can be found [here](https://brew.sh/).
@@ -24,9 +24,10 @@ brew install hugo
 
 2. Create a `hugo` website.
 ```
-hugo new site personal-website -f yml
+hugo new site your-username.github.io -f yml
 ```
 I prefer using the `yml` configs because they have linting available within Microsoft VS Code.
+I recommend using `your-username.github.io` because it allows you to use that as the URL when it gets published to the web.
 
 3. Install your theme
 ```
@@ -34,6 +35,7 @@ I prefer using the `yml` configs because they have linting available within Micr
 cd personal-website
 
 # Add theme as a submodule
+git init
 git submodule add https://github.com/nanxiaobei/hugo-paper themes/paper
 ```
 
@@ -84,4 +86,8 @@ hugo new content/projects
 
 # 🔄 Implementing CI/CD with Github Actions
 > To take this another level further, you can automate the update of your website using the following Github actions file.
-Refer to this [CI/CD pipeline guide](https://gohugo.io/hosting-and-deployment/hosting-on-github/) from `Hugo`.
+- Refer to this [CI/CD pipeline guide](https://gohugo.io/hosting-and-deployment/hosting-on-github/) from `Hugo`.
+1. Copy the `hugo.yaml` file from `Step 6.`
+2. Run a `git push`
+3. Your website should now be live.
+![Live website](/build-static-website-hugo-10-minutes/live-website.png#center)
