@@ -1,0 +1,35 @@
+languageCode: en-us
+baseURL: 'namtonthat.vercel.app'
+title: Nam's Thoughts
+theme: PaperMod
+
+params:
+  env: production
+  github: namtonthat
+  linkedin: ntonthat
+  avatar: dzjuffqmr2@privaterelay.appleid.com
+  name: Nam Tonthat
+  bio: "Hey, I'm Nam 👋; currently a data engineer for Seek. I enjoy learning new things to do with Python or languages in general. On my blog, I write about things that motivate me and everything I learn. I'm actively exploring the world of machine learning applications."
+  disableHLJS: true
+  tableOfContents: true
+  color: linen
+  enableEmoji: true
+  ShowCodeCopyButtons: true
+
+menu:
+  main:
+    - identifier: posts
+      name: posts
+      url: /posts/
+    - identifier: projects
+      name: projects
+      url: /projects/
+
+markup:
+  tableOfContents:
+    startLevel: 1
+    endLevel: 3
+  highlight:
+    codeFences: true
+    guessSyntax: true
+    style: monokai
