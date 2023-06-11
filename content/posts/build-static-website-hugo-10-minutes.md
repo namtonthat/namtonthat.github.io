@@ -84,4 +84,4 @@ hugo new content/projects
 
 # 🔄 Implementing CI/CD with Github Actions
 > To take this another level further, you can automate the update of your website using the following Github actions file.
-
+Refer to this [CI/CD pipeline guide](https://gohugo.io/hosting-and-deployment/hosting-on-github/) from `Hugo`.
