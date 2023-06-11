@@ -1,5 +1,5 @@
 languageCode: en-us
-baseURL: namtonthat.github.io
+baseURL: https://namtonthat.vercel.app
 title: Nam's Thoughts
 theme: paper
 
