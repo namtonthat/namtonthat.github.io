@@ -1,6 +1,6 @@
-Welcome to my personal website repository! This website is built using the Hugo static site generator.
+Welcome to my personal website repository! This website is built using the Hugo static site generator
 
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/namtonthat/namtonthat.github.io/CI)](https://github.com/namtonthat/namtonthat.github.io/actions)
+[![Build Status](https://github.com/namtonthat/namtonthat.github.io/actions/workflows/cicd.yaml/badge.svg)](https://github.com/namtonthat/namtonthat.github.io/actions/workflows/cicd.yaml)
 
 
 ## Description
