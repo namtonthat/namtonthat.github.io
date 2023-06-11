@@ -1,7 +1,5 @@
 Welcome to my personal website repository! This website is built using the Hugo static site generator.
 
-[![Build Status](https://github.com/namtonthat/personal-website/actions/workflows/actions.yaml/badge.svg)](https://github.com/namtonthat/personal-website/actions/workflows/actions.yaml)
-
 ## Description
 
 This website serves as a portfolio to showcase my work, blog posts, and projects. It demonstrates my proficiency in building static websites with Hugo and my ability to integrate CI/CD pipelines for automated deployments.
