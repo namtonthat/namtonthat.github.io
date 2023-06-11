@@ -1,6 +1,6 @@
 languageCode: en-us
-baseURL: 'namtonthat.vercel.app'
-title: 📕 Nam's Thoughts
+baseURL: namtonthat.github.io
+title: Nam's Thoughts
 theme: paper
 
 params:
