@@ -7,15 +7,15 @@ tags: ["hugo", "static website", "github", "CI/CD pipeline", "Hugo tutorial", "H
 
 Discover how to showcase your work using Hugo, a powerful tool that integrates `markdown` files with a CI/CD pipeline, minimizing the time needed to build a professional-looking website.
 
-# 🎯 Project Objectives
-1. Learn how to build a Hugo website in under eight steps.
+## 🎯 Project Objectives
+1. Learn how to build a Hugo website in under five steps.
 2. Understand the process of setting up a CI/CD pipeline in just another two minutes.
 
-# Necessary Tools
+## Necessary Tools
 - `homebrew`; installation instructions can be found [here](https://brew.sh/).
-- A Hugo theme; you can choose from a wide variety [here](https://themes.gohugo.io/). For this tutorial, we'll use the `PaperMod` theme from [adityatelange](git@github.com:adityatelange/hugo-PaperMod.git), which embodies simplicity and minimalism.
+- A Hugo theme; you can choose from a wide variety [here](https://themes.gohugo.io/). For this tutorial, we'll use the `paper` theme from [nanxiaobei](git@github.com:nanxiaobei/hugo-paper.git), which embodies simplicity and minimalism.
 
-# 🏗️ Basic Hugo Setup Procedure
+## 🏗️ Basic Hugo Setup Procedure
 1. Install `hugo`.
 
 ```bash
@@ -26,8 +26,9 @@ brew install hugo
 ```
 hugo new site your-username.github.io -f yml
 ```
-I prefer using the `yml` configs because they have linting available within Microsoft VS Code.
-I recommend using `your-username.github.io` because it allows you to use that as the URL when it gets published to the web.
+*Notes*
+- I prefer using the `yml` configs because it gets automatically linted within VS Code.
+- Using `your-username.github.io` allows you to use that as the URL when it gets published to the web.
 
 3. Install your theme
 ```
@@ -69,22 +70,23 @@ theme: paper
 ```
 
 5. Run `hugo server -D` to render the website (it should be hosted on `localhost:1313`).
-6. You should have something that looks like this:
+You should have something that looks like this:
 ![Plain Hugo website](/build-static-website-hugo-10-minutes/hugo-plain.png#center)
 *Plain blog built with **Hugo***
 
-# ⚙️ Configuration
+## ⚙️ Configuration
 There are parameters available to use within the `params` of the `hugo.yaml`. They can be found [here](https://gohugo.io/getting-started/configuration/).
 
-## ➕ Adding a new page
-- Adding a new page is simple as, for example using `content/projects` will create a new `markdown` file called `projects.md` within the folder `content` as per the template found within the `archetypes/default.md` file.
-- Editing the `projects.md` will reflect the changes within the browser upon saving.
+### ➕ Adding a new page
+6.  Adding a new page is simple as, for example using `content/projects` will create a new `markdown` file called `projects.md` within the folder `content` as per the template found within the `archetypes/default.md` file.
+
+Editing the `projects.md` will reflect the changes within the browser upon saving.
 ```
-# hugo new <folder_name>
+# hugo new <folder_name>/<post_name>
 hugo new content/projects
 ```
 
-# 🔄 Implementing CI/CD with Github Actions
+## 🔄 Implementing CI/CD with Github Actions
 > To take this another level further, you can automate the update of your website using the following Github actions file.
 - Refer to this [CI/CD pipeline guide](https://gohugo.io/hosting-and-deployment/hosting-on-github/) from `Hugo`.
 1. Copy the `hugo.yaml` file from `Step 6.`
