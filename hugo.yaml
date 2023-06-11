@@ -32,3 +32,6 @@ markup:
     codeFences: true
     guessSyntax: true
     style: monokai
+
+permalinks:
+  posts: /posts/:year/:month/:title/

@@ -63,7 +63,7 @@ git submodule add https://github.com/nanxiaobei/hugo-paper themes/paper
 `hugo.yaml` config
 ```
 languageCode: en-us
-baseURL: ''
+baseURL: your-username.github.io
 title:
 theme: paper
 ```
