@@ -40,7 +40,21 @@ git init
 git submodule add https://github.com/nanxiaobei/hugo-paper themes/paper
 ```
 
-4. Update your `yaml` config. Your directory should look something like the below but if not, change the `hugo.toml` to `hugo.yaml`.
+4. Update your `yaml` config.
+`hugo.yaml` config
+```
+languageCode: en-us
+baseURL: your-username.github.io
+title:
+theme: paper
+```
+
+5.  Create a new post
+```
+hugo new posts/<new_post_name>
+```
+
+Your directory should look something like the below but if not, change the `hugo.toml` to `hugo.yaml`.
 ```
 ├── archetypes
 │   └── default.md
@@ -61,15 +75,7 @@ git submodule add https://github.com/nanxiaobei/hugo-paper themes/paper
     ...
 ```
 
-`hugo.yaml` config
-```
-languageCode: en-us
-baseURL: your-username.github.io
-title:
-theme: paper
-```
-
-5. Run `hugo server -D` to render the website (it should be hosted on `localhost:1313`).
+6. Run `hugo server -D` to render the website (it should be hosted on `localhost:1313`).
 You should have something that looks like this:
 ![Plain Hugo website](/build-static-website-hugo-10-minutes/hugo-plain.png#center)
 *Plain blog built with **Hugo***
