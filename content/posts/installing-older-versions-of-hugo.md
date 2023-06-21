@@ -1,7 +1,6 @@
 ---
 title: "❄️ Installing Older Versions of `hugo`"
 date: 2023-06-30
-draft: true
 tags: ["hugo", "static website", "github", "Hugo tutorial", "Hugo website"]
 ---
 
