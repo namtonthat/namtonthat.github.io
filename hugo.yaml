@@ -2,6 +2,7 @@ languageCode: en-us
 baseURL: namtonthat.github.io
 title: Nam's Thoughts
 theme: paper
+enableRobotsTXT: true
 
 params:
   github: namtonthat
