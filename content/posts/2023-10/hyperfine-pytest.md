@@ -5,20 +5,27 @@ showToc: true
 tags: ["hyperfine", "pytest", "devops optimisation"]
 ---
 
-### Introduction
-In today's post, I will share my recent experience with determining the optimal number of cores needed for a specific set of unit tests. For this purpose, I used two invaluable tools: hyperfine, a command-line benchmarking tool, and pytest, a popular Python testing framework.
+## Problem
+At SEEK, we use `buildkite` to run `pytest` from a dockerised ETL `pyspark` container.
+However, with ~1,500 tests and counting, our tests have been taking > 5 minutes and resulting in unfavourable feedback times.
 
-### Setup
+By default, `pytest` will only use one core to run tests, however with the `pytest` plugin `pytest-xdist`, you can utilise as many cores available to run your testing but up to a point:
+- Set too low, `pytest` will not fully utilise the parallelism available on the machine.
+- Set too high, `pytest` will think that there's more cores than it has available and reflect performance degradation.
+
+As such, for the machines I plan on running on (AWS' `c7g.4xlarge` i.e. AWS' ARM Graviton) machine, I used `hyperfine` to experiment the most optimal CPU cores
+
+## Setup
 To set the context, I have a unit testing script that's run inside a docker container which is invoked by the Makefile, with the number of cores for pytest being passed as an environment variable. Here's the bash script:
 
-#### `Makefile`
+### `Makefile`
 ```
 .PHONY: test
 test:
     docker-compose -f cicd/tests/docker-compose-test.yml up --abort-on-container-exit $(service)
 ```
 
-#### `cicd/tests/docker-compose-test.yml`
+### `cicd/tests/docker-compose-test.yml`
 ```
 version: '3.8'
 services:
@@ -31,7 +38,7 @@ services:
       - pytest_cores
 ```
 
-#### `bash` script
+### `bash` script
 ```bash
 #!/usr/bin/env bash
 set -eux
@@ -46,7 +53,7 @@ pytest -n $pytest_cores $PYTEST_OPTIONS src/
 ```
 
 
-### Benchmarking with Hyperfine
+## Benchmarking with Hyperfine
 The primary aim was to find out the optimal number of cores required to make our tests run faster. That's where hyperfine comes in.
 
 To determine the best core count, I used the following hyperfine command:
@@ -61,9 +68,9 @@ Here's a breakdown of the command:
 `make test service=pipelines pytest_cores={cores}`: The command being benchmarked where `{cores}` is a placeholder that hyperfine replaces based on the current loop.
 `--export-markdown pytest-cores.md`: Export the results into a markdown file for further analysis.
 
-### Analysis
+## Analysis
 
-#### Results
+### Results
 
 | Command | Mean [s] | Min [s] | Max [s] | Relative |
 |:---|---:|---:|---:|---:|
@@ -85,16 +92,16 @@ From the data, we can clearly see a general decrease in the mean execution time 
 It's essential to recognize that while increasing concurrency (by adding more cores) can speed up execution, it doesn't always lead to linear improvements. There's a sweet spot, which in this case is around 6 cores for the c5d.4xlarge instance. Beyond this point, any performance gains from parallel execution are offset by the overheads introduced.
 
 
-### Conclusion
+## Conclusion
 By combining the power of `hyperfine` and `pytest`, it became straightforward to determine the optimal number of cores needed for my tests. Not only does this help in reducing test run times, but it also aids in optimising resource utilization.
 
 
-### References
+## References
 Check out my related postss:
 - [Makefile breakdown]({{< ref "/posts/2023-07/makefile-breakdown.md" >}})
 - [Makefiles - The secret sauce]({{< ref "posts/2023-07/makefiles-the-secret-sauce.md" >}})
 
-#### Code used to generate results
+### Code used to generate results
 ```
 # Annotating the graph with context
 
