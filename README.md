@@ -1,3 +1,5 @@
+**NOTE** Archiving this repo to start publishing articles on Linkedin instead. 
+
 Welcome to my personal website repository! This website is built using the Hugo static site generator
 
 [![Build Status](https://github.com/namtonthat/namtonthat.github.io/actions/workflows/cicd.yaml/badge.svg)](https://github.com/namtonthat/namtonthat.github.io/actions/workflows/cicd.yaml)
